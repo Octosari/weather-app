@@ -1,5 +1,8 @@
+import useFetch from "./useFetch";
+
 function App() {
-  return <div>Hello,World!</div>;
+  const { data } = useFetch("Kiev");
+  return <div>{data.name}</div>; // this line is working only if it is commented and decommented
 }
 
 export default App;
