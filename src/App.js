@@ -1,8 +1,7 @@
-import useFetch from "./useFetch";
-
+import Main from "./components/Main";
+import "./styles.scss";
 function App() {
-  const { data } = useFetch("Kiev");
-  return <div>{data.name}</div>; // this line is working only if it is commented and decommented
+  return <Main />;
 }
 
 export default App;
