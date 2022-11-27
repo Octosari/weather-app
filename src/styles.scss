@@ -44,6 +44,8 @@
         font-size: 16px;
         font-weight: bold;
         form {
+          display: flex;
+          align-items: center;
           input {
             margin-top: 0px;
             padding: 10px;
@@ -66,9 +68,6 @@
             }
           }
 
-          ::placeholder {
-            font-size: 20px;
-          }
           input:focus {
             border: none;
           }

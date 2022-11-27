@@ -5,18 +5,19 @@ const useFetch = (city) => {
   const apiKey = "de706bc8913ef2937255d4be4ce4baa0";
 
   useEffect(() => {
-    const dataFetch = async () => {
-      const data = await (
-        await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
-        )
-      ).json();
+    if (city !== null) {
+      const dataFetch = async () => {
+        const data = await (
+          await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
+          )
+        ).json();
 
-      setData(data);
-    };
-    dataFetch();
+        setData(data);
+      };
+      dataFetch();
+    }
   }, [city]);
-
   return { data };
 };
 
