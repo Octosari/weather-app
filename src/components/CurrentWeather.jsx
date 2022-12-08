@@ -1,37 +1,10 @@
-import clouds from "../icons/cloud.svg";
-import rain from "../icons/rain.svg";
-import clearDay from "../icons/clearDay.svg";
-import clearNight from "../icons/clearNight.svg";
-import mist from "../icons/mist.svg";
+import { imageType } from "../imageType";
 
-const CurrentWeather = ({ data }) => {
+const CurrentWeather = ({ data, openWholeDay }) => {
   const currentDate = new Date();
-  const image = (data) => {
-    if (data != null && data.weather[0].main === "Clouds") return clouds;
-    else if (data != null && data.weather[0].main === "Rain") return rain;
-    else if (
-      data != null &&
-      data.weather[0].main === "Clear" &&
-      currentDate.getHours() > 20 &&
-      currentDate.getHours() < 4
-    )
-      return clearNight;
-    else if (
-      data != null &&
-      data.weather[0].main === "Clear" &&
-      currentDate.getHours() < 20 &&
-      currentDate.getHours() > 4
-    )
-      return clearDay;
-    else if (
-      (data != null && data.weather[0].main === "Mist") ||
-      (data != null && data.weather[0].main === "Fog")
-    )
-      return mist;
-  };
 
   return (
-    <div className="currentWeather">
+    <div className="currentWeather" onClick={openWholeDay}>
       {data != null ? (
         <>
           <div className="textContainer">
@@ -44,7 +17,7 @@ const CurrentWeather = ({ data }) => {
           </div>
 
           <img
-            src={data != null ? image(data) : null}
+            src={data != null ? imageType(data) : null}
             alt="cloudy"
             draggable="false"
           />

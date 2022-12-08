@@ -1,4 +1,4 @@
-import cloudLogo from "../icons/cloud.svg";
+import cloudLogo from "../assets/icons/cloud.svg";
 
 const FutureWeatherElement = () => {
   return (

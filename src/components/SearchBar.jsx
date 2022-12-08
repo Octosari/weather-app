@@ -1,5 +1,5 @@
 import { useState } from "react";
-import seachLogo from "../icons/search.svg";
+import seachLogo from "../assets/icons/search.svg";
 
 const SearchBar = ({ cityFromInput }) => {
   const handleClick = (e) => {

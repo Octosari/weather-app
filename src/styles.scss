@@ -52,8 +52,10 @@
             background-color: #d9d9d9;
             border: none;
             border-bottom: 2px solid black;
+            transition: 1s;
           }
           button {
+            transition: 1s;
             margin-left: 15px;
             border-radius: 50px;
             height: 40px;
@@ -67,9 +69,12 @@
               margin-top: 2px;
             }
           }
-
+          button:hover {
+            background-color: #a6a6a6;
+          }
           input:focus {
-            border: none;
+            border-bottom: 2px solid black;
+            outline: none;
           }
 
           .currentDate {
@@ -78,6 +83,7 @@
         }
       }
       .currentWeather {
+        cursor: pointer;
         display: flex;
         margin: 30px;
         justify-content: space-around;
@@ -86,7 +92,7 @@
         height: 120px;
         background-color: #d9d9d9;
         border-radius: 20px;
-
+        transition: 1s;
         .textContainer {
           display: flex;
           flex-direction: column;
@@ -114,6 +120,9 @@
           font-weight: 300;
           font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
+      }
+      .currentWeather:hover {
+        background-color: #a6a6a6;
       }
       .futureWeather {
         display: flex;
@@ -172,6 +181,52 @@
           justify-content: center;
           font-size: 18px;
           font-weight: bold;
+        }
+      }
+    }
+    .wholeDayWeatherContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 450px;
+      width: 700px;
+      flex-direction: column;
+      button {
+        display: flex;
+        right: 300px;
+        position: relative;
+        cursor: pointer;
+        align-items: center;
+        justify-content: flex-start;
+        border: none;
+        border-radius: 10px;
+        background-color: #d6d6d6;
+      }
+      .currentType {
+        display: flex;
+        width: 300px;
+        height: 200px;
+        border-radius: 40px;
+        background-color: #d9d9d9;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        img {
+          width: 120px;
+          height: 120px;
+        }
+        .textWDWContainer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 100px;
+          height: 60px;
+          border-radius: 10px;
+          background-color: #f0f0f0;
+          span {
+            font-size: 24px;
+          }
         }
       }
     }
