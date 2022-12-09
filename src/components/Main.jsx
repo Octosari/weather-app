@@ -24,7 +24,7 @@ const Main = () => {
     <div className="mainWrapper">
       {isClicked ? (
         <WholeDayWeather
-          data={data != null && data.cod == 200 ? data : null}
+          data={data !== null && data.cod === 200 ? data : null}
           goBackHandler={goBackHandler}
         />
       ) : (
@@ -32,10 +32,11 @@ const Main = () => {
           <div className="topWrapper">
             <SearchBar cityFromInput={cityFromInput} />
             <CurrentWeather
+              currentCity={currentCity}
               openWholeDay={
-                data != null && data.cod == 200 ? openWholeDay : null
+                data !== null && data.cod === 200 ? openWholeDay : null
               }
-              data={data != null && data.cod == 200 ? data : null}
+              data={data !== null && data.cod === 200 ? data : null}
             />
           </div>
           <FutureWeather />

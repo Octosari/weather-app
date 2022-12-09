@@ -1,8 +1,6 @@
 import { imageType } from "../imageType";
 
-const CurrentWeather = ({ data, openWholeDay }) => {
-  const currentDate = new Date();
-
+const CurrentWeather = ({ data, openWholeDay, currentCity }) => {
   return (
     <div className="currentWeather" onClick={openWholeDay}>
       {data != null ? (
@@ -10,10 +8,7 @@ const CurrentWeather = ({ data, openWholeDay }) => {
           <div className="textContainer">
             <span>{data != null ? data.main.temp : null} ºC</span>
             <span>{data != null ? data.weather[0].main : null}</span>
-            <span className="currentDate">
-              {currentDate.getUTCFullYear()}.{currentDate.getUTCMonth() + 1}.
-              {currentDate.getUTCDate()}
-            </span>
+            <span className="currentCity">{currentCity}</span>
           </div>
 
           <img
